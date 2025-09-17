@@ -105,7 +105,7 @@ ul {
 
 /* Seção Hero */
 .hero {
-    background: url('https://via.placeholder.com/1500x700/1a1a1a/cccccc?text=Fundo+Tecnologico') no-repeat center center/cover; /* Substitua pela sua imagem de fundo */
+    background-image: url(fundoback.jpeg); /* Substitua pela sua imagem de fundo */
     height: 60vh; /* Altura menor para a hero */
     display: flex;
     justify-content: center;
