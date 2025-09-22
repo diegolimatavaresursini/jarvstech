@@ -1,3 +1,511 @@
+:root {
+    --bg-dark: #222222;
+    --text-light: #f4f4f4;
+    --jarvs-blue: #007bff; /* Azul da logo */
+    --jarvs-orange: #ff8c00; /* Laranja da logo */
+    --card-bg: #333333;
+    --border-color: #444444;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Botão padrão */
+.btn {
+    display: inline-block;
+    background: linear-gradient(to right, var(--jarvs-blue), var(--jarvs-orange));
+    color: var(--text-light);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    border: none; /* Remover borda padrão do botão */
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* Cabeçalho */
+.header {
+    background-color: var(--bg-dark);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px; /* Garante altura mínima */
+}
+
+.header .logo h1 {
+    font-size: 2.2em;
+    color: var(--jarvs-blue);
+    display: inline-block; /* Para alinhar com a tag P */
+}
+
+.header .logo h1 .ia-highlight {
+    color: var(--jarvs-orange);
+}
+
+.header .logo p {
+    font-size: 0.8em;
+    color: #b0b0b0;
+    letter-spacing: 1px;
+    margin-top: -5px; /* Ajusta o espaçamento com o H1 */
+}
+
+
+.nav-menu ul {
+    display: flex;
+}
+
+.nav-menu ul li {
+    margin-left: 25px;
+}
+
+.nav-menu ul li a {
+    font-weight: bold;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--jarvs-orange);
+}
+
+/* Seção Hero */
+.hero {
+    background-image: url(fundoback.jpeg); /* Substitua pela sua imagem de fundo */
+    height: 60vh; /* Altura menor para a hero */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    /* Adiciona um overlay escuro para melhorar a leitura do texto */
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+/* Seção Sobre Nós */
+.about-us {
+    padding: 80px 0;
+    background-color: var(--bg-dark);
+}
+
+.about-us .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--jarvs-blue);
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #d0d0d0;
+}
+
+.about-slogan {
+    flex: 1;
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Garante que o slogan ocupe a altura disponível */
+}
+
+.about-slogan h4 {
+    font-size: 1.5em;
+    color: var(--jarvs-orange);
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+
+/* Seção Nossos Serviços */
+.services {
+    padding: 80px 0;
+    background-color: #2a2a2a;
+}
+
+.services h3 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: var(--jarvs-blue);
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-cards .card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-cards .card:hover {
+    transform: translateY(-10px);
+}
+
+.service-cards .card i {
+    font-size: 3em;
+    color: var(--jarvs-orange);
+    margin-bottom: 20px;
+}
+
+.service-cards .card h4 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--jarvs-blue);
+}
+
+.service-cards .card p {
+    font-size: 1em;
+    color: #c0c0c0;
+}
+
+/* Seção Contato */
+.contact {
+    padding: 80px 0;
+    background-color: var(--bg-dark);
+}
+
+.contact h3 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: var(--jarvs-blue);
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Para responsividade */
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: #3a3a3a;
+    border: 1px solid var(--border-color);
+    padding: 12px 15px;
+    border-radius: 5px;
+    color: var(--text-light);
+    font-size: 1em;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #a0a0a0;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.1em;
+    color: #c0c0c0;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--jarvs-orange);
+    font-size: 1.8em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--jarvs-blue);
+}
+
+/* Rodapé */
+.footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 40px 0;
+    font-size: 0.9em;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo h1 {
+    font-size: 2em;
+    color: var(--jarvs-blue);
+    display: inline-block;
+}
+
+.footer-logo h1 .ia-highlight {
+    color: var(--jarvs-orange);
+}
+
+.footer-logo p {
+    font-size: 0.7em;
+    color: #b0b0b0;
+    letter-spacing: 1px;
+    margin-top: -5px;
+}
+
+.footer .copyright {
+    margin: 0;
+}
+
+.footer-links a {
+    color: #ccc;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--jarvs-orange);
+}
+
+
+/* Chatbot Icon */
+.chatbot-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(to right, #00aaff, #007bff); /* Gradiente azul para o ícone */
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.chatbot-icon:hover {
+    transform: scale(1.1);
+}
+
+.chatbot-message {
+    position: absolute;
+    right: 70px; /* Posição à esquerda do ícone */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    white-space: nowrap; /* Impede quebra de linha */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.chatbot-icon:hover .chatbot-message {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Chatbot Window */
+.chatbot-window {
+    position: fixed;
+    bottom: 100px; /* Acima do ícone */
+    right: 30px;
+    width: 350px;
+    height: 450px;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1001;
+    display: none; /* Inicia oculto */
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chatbot-header {
+    background-color: var(--jarvs-blue);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.close-chatbot {
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.chatbot-body {
+    flex-grow: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Mensagens no final */
+    gap: 10px;
+}
+
+.chatbot-body p {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 8px;
+    align-self: flex-start; /* Mensagens do bot */
+    max-width: 80%;
+}
+
+.chatbot-body input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    margin-top: auto; /* Empurra o input para baixo */
+}
+
+/* Responsividade Básica */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .nav-menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-menu ul li {
+        margin: 0 10px 10px 10px;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5em;
+    }
+
+    .about-us .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-slogan {
+        margin-top: 30px;
+    }
+
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-form, .contact-info {
+        width: 100%;
+        max-width: 400px;
+    }
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-links {
+        margin-top: 15px;
+    }
+    .footer-links a {
+        margin: 0 10px;
+    }
+
+    .chatbot-window {
+        width: 90%;
+        left: 5%;
+        right: 5%;
+    }
+
 /* --- Estilos para o Rodapé (ACATE) --- */
 .footer-association {
   display: flex;
