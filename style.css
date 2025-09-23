@@ -1,13 +1,14 @@
+* Reset Básico e Cores Base */
 :root {
-    --bg-dark: #222222;
-    --text-light: #f4f4f4;
-    --jarvs-blue: #007bff; /* Azul da logo */
-    --jarvs-orange: #ff8c00; /* Laranja da logo */
-    --card-bg: #333333;
-    --border-color: #444444;
+    --primary-color: #007bff; /* Azul vibrante, pode ajustar */
+    --secondary-color: #00bcd4; /* Azul mais claro para destaques */
+    --dark-bg: #1a1a2e; /* Fundo escuro principal */
+    --light-text: #e0e0e0; /* Texto claro */
+    --gray-text: #b0b0b0; /* Texto cinza */
+    --accent-color: #00ffc8; /* Cor de destaque para IA */
+    --whatsapp-color: #25d366; /* Cor do WhatsApp */
 }
 
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -15,250 +16,295 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    color: var(--light-text);
+    background-color: var(--dark-bg);
+    overflow-x: hidden; /* Evita scroll horizontal indesejado */
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-color);
 }
 
 .container {
-    max-width: 1100px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-a {
-    color: var(--text-light);
-    text-decoration: none;
-}
-
-ul {
-    list-style: none;
-}
-
-/* Botão padrão */
-.btn {
-    display: inline-block;
-    background: linear-gradient(to right, var(--jarvs-blue), var(--jarvs-orange));
-    color: var(--text-light);
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: transform 0.3s ease;
-    border: none; /* Remover borda padrão do botão */
-    cursor: pointer;
-}
-
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* Cabeçalho */
+/* Header */
 .header {
-    background-color: var(--bg-dark);
-    padding: 15px 0;
-    border-bottom: 1px solid var(--border-color);
+    background-color: #0d0d1a; /* Um pouco mais escuro que o fundo */
+    padding: 20px 0;
+    position: sticky; /* Fixa o cabeçalho no topo ao rolar */
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    min-height: 60px; /* Garante altura mínima */
 }
 
-.header .logo h1 {
-    font-size: 2.2em;
-    color: var(--jarvs-blue);
-    display: inline-block; /* Para alinhar com a tag P */
+.logo h1 {
+    font-size: 2.5em;
+    color: var(--light-text);
+    margin: 0;
 }
 
-.header .logo h1 .ia-highlight {
-    color: var(--jarvs-orange);
+.logo .ia-highlight {
+    color: var(--accent-color);
 }
 
-.header .logo p {
+.logo p {
     font-size: 0.8em;
-    color: #b0b0b0;
-    letter-spacing: 1px;
-    margin-top: -5px; /* Ajusta o espaçamento com o H1 */
+    letter-spacing: 2px;
+    color: var(--gray-text);
+    margin-top: -5px;
 }
-
 
 .nav-menu ul {
+    list-style: none;
     display: flex;
 }
 
 .nav-menu ul li {
-    margin-left: 25px;
+    margin-left: 30px;
 }
 
 .nav-menu ul li a {
+    color: var(--light-text);
     font-weight: bold;
-    color: #ccc;
-    transition: color 0.3s ease;
+    font-size: 1.1em;
+    padding: 5px 0;
+    position: relative;
 }
 
-.nav-menu ul li a:hover {
-    color: var(--jarvs-orange);
+.nav-menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    left: 0;
+    bottom: 0;
+    transition: width 0.3s ease;
 }
 
-/* Seção Hero */
+.nav-menu ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero Section */
 .hero {
-    background-image: url(fundoback.jpeg); /* Substitua pela sua imagem de fundo */
-    height: 60vh; /* Altura menor para a hero */
+    background: url('https://source.unsplash.com/1600x900/?futuristic-city,ai-technology') no-repeat center center/cover; /* Imagem de fundo, você pode substituir por uma sua */
+    height: 80vh; /* 80% da altura da viewport */
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     text-align: center;
     position: relative;
-    /* Adiciona um overlay escuro para melhorar a leitura do texto */
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
+    color: var(--light-text);
+    padding: 0 20px;
+}
+
+/* Overlay para a imagem do hero, para melhor contraste do texto */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Escurece a imagem de fundo */
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h2 {
     font-size: 3.5em;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-/* Seção Sobre Nós */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    transform: translateY(-3px);
+}
+
+/* About Us Section */
 .about-us {
     padding: 80px 0;
-    background-color: var(--bg-dark);
+    background-color: #1a1a2e; /* Mantém o fundo principal */
+    text-align: center;
 }
 
 .about-us .container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     gap: 40px;
+    align-items: center;
 }
 
 .about-text {
-    flex: 1;
+    max-width: 800px;
 }
 
 .about-text h3 {
-    font-size: 2em;
+    font-size: 2.2em;
+    color: var(--accent-color);
     margin-bottom: 20px;
-    color: var(--jarvs-blue);
+    text-transform: uppercase;
 }
 
 .about-text p {
     font-size: 1.1em;
     line-height: 1.8;
-    color: #d0d0d0;
+    color: var(--gray-text);
 }
 
 .about-slogan {
-    flex: 1;
-    background-color: var(--card-bg);
+    background-color: #2c2c47; /* Fundo para o slogan */
     padding: 30px;
     border-radius: 10px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%; /* Garante que o slogan ocupe a altura disponível */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 900px;
 }
 
 .about-slogan h4 {
-    font-size: 1.5em;
-    color: var(--jarvs-orange);
-    line-height: 1.4;
+    font-size: 1.8em;
+    color: var(--light-text);
+    line-height: 1.5;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-
-/* Seção Nossos Serviços */
+/* Services Section */
 .services {
     padding: 80px 0;
-    background-color: #2a2a2a;
+    background-color: #0d0d1a; /* Fundo mais escuro para os serviços */
+    text-align: center;
 }
 
 .services h3 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 50px;
-    color: var(--jarvs-blue);
+    font-size: 2.2em;
+    color: var(--accent-color);
+    margin-bottom: 40px;
+    text-transform: uppercase;
 }
 
 .service-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que os cards quebrem a linha em telas menores */
     gap: 30px;
 }
 
-.service-cards .card {
-    background-color: var(--card-bg);
-    padding: 30px;
+.card {
+    background-color: #2c2c47;
+    padding: 40px 30px;
     border-radius: 10px;
     text-align: center;
-    transition: transform 0.3s ease;
+    width: 300px; /* Largura fixa para os cards */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-cards .card:hover {
+.card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
-.service-cards .card i {
-    font-size: 3em;
-    color: var(--jarvs-orange);
+.card i {
+    font-size: 3.5em;
+    color: var(--secondary-color);
     margin-bottom: 20px;
 }
 
-.service-cards .card h4 {
+.card h4 {
     font-size: 1.5em;
+    color: var(--light-text);
     margin-bottom: 15px;
-    color: var(--jarvs-blue);
 }
 
-.service-cards .card p {
+.card p {
     font-size: 1em;
-    color: #c0c0c0;
+    color: var(--gray-text);
 }
 
-/* Seção Contato */
+/* Contact Section */
 .contact {
     padding: 80px 0;
-    background-color: var(--bg-dark);
+    background-color: #1a1a2e;
+    text-align: center;
 }
 
 .contact h3 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-bottom: 50px;
-    color: var(--jarvs-blue);
+    font-size: 2.2em;
+    color: var(--accent-color);
+    margin-bottom: 40px;
+    text-transform: uppercase;
 }
 
 .contact-content {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Permite quebrar em telas menores */
     gap: 50px;
-    flex-wrap: wrap; /* Para responsividade */
 }
 
 .contact-form {
-    flex: 1;
-    min-width: 300px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    background-color: #2c2c47;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .contact-form input,
 .contact-form textarea {
-    background-color: #3a3a3a;
-    border: 1px solid var(--border-color);
-    padding: 12px 15px;
+    background-color: #1a1a2e;
+    border: 1px solid #444;
+    padding: 15px;
+    margin-bottom: 15px;
     border-radius: 5px;
-    color: var(--text-light);
+    color: var(--light-text);
     font-size: 1em;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: #a0a0a0;
+    color: var(--gray-text);
 }
 
 .contact-form textarea {
@@ -266,286 +312,219 @@ ul {
     resize: vertical;
 }
 
+.contact-form button {
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+    border: none;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.1em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.contact-form button:hover {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+    transform: translateY(-3px);
+}
+
 .contact-info {
-    flex: 1;
-    min-width: 300px;
+    text-align: left;
+    max-width: 350px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 20px;
-    font-size: 1.1em;
-    color: #c0c0c0;
 }
 
 .contact-info p {
-    margin: 0;
-}
-
-.social-links {
-    margin-top: 20px;
-    display: flex;
-    gap: 20px;
+    font-size: 1.1em;
+    color: var(--light-text);
+    margin-bottom: 20px;
 }
 
 .social-links a {
-    color: var(--jarvs-orange);
-    font-size: 1.8em;
+    font-size: 2em;
+    margin-right: 20px;
+    color: var(--secondary-color);
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: var(--jarvs-blue);
+    color: var(--accent-color);
 }
 
-/* Rodapé */
+/* Footer */
 .footer {
-    background-color: #1a1a1a;
-    color: #ccc;
+    background-color: #0d0d1a;
     padding: 40px 0;
-    font-size: 0.9em;
+    text-align: center;
+    border-top: 1px solid #2c2c47;
 }
 
 .footer .container {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
     gap: 20px;
 }
 
 .footer-logo h1 {
     font-size: 2em;
-    color: var(--jarvs-blue);
-    display: inline-block;
+    color: var(--light-text);
+    margin: 0;
 }
 
-.footer-logo h1 .ia-highlight {
-    color: var(--jarvs-orange);
+.footer-logo .ia-highlight {
+    color: var(--accent-color);
 }
 
 .footer-logo p {
     font-size: 0.7em;
-    color: #b0b0b0;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    color: var(--gray-text);
     margin-top: -5px;
 }
 
-.footer .copyright {
-    margin: 0;
+.footer-association p {
+    font-size: 0.9em;
+    color: var(--gray-text);
+    margin-bottom: 10px;
+}
+
+.footer-association .acate img {
+    max-width: 120px; /* Ajusta o tamanho máximo da logo da ACATE */
+    height: auto;
+    display: block; /* Remove espaço extra abaixo da imagem */
+    margin: 0 auto; /* Centraliza a imagem */
+}
+
+.copyright {
+    font-size: 0.9em;
+    color: var(--gray-text);
+    margin-top: 20px;
 }
 
 .footer-links a {
-    color: #ccc;
-    margin-left: 20px;
-    transition: color 0.3s ease;
+    color: var(--gray-text);
+    font-size: 0.9em;
+    margin: 0 15px;
 }
 
 .footer-links a:hover {
-    color: var(--jarvs-orange);
+    color: var(--accent-color);
 }
 
 
-/* Chatbot Icon */
-.chatbot-icon {
+/* WhatsApp Float Button */
+.whatsapp-float {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: linear-gradient(to right, #00aaff, #007bff); /* Gradiente azul para o ícone */
-    color: white;
     width: 60px;
     height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    bottom: 40px;
+    right: 40px;
+    background-color: var(--whatsapp-color);
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
     z-index: 1000;
+    display: flex; /* Para centralizar o ícone */
+    align-items: center;
+    justify-content: center;
     transition: transform 0.3s ease;
 }
 
-.chatbot-icon:hover {
-    transform: scale(1.1);
+.whatsapp-float:hover {
+    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
 }
 
-.chatbot-message {
-    position: absolute;
-    right: 70px; /* Posição à esquerda do ícone */
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #333;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 8px;
-    font-size: 0.9em;
-    white-space: nowrap; /* Impede quebra de linha */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+.whatsapp-float i {
+    font-size: 1.5em; /* Ajusta o tamanho do ícone */
 }
 
-.chatbot-icon:hover .chatbot-message {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Chatbot Window */
-.chatbot-window {
-    position: fixed;
-    bottom: 100px; /* Acima do ícone */
-    right: 30px;
-    width: 350px;
-    height: 450px;
-    background-color: #2c2c2c;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    z-index: 1001;
-    display: none; /* Inicia oculto */
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.chatbot-header {
-    background-color: var(--jarvs-blue);
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.close-chatbot {
-    cursor: pointer;
-    font-size: 1.2em;
-}
-
-.chatbot-body {
-    flex-grow: 1;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Mensagens no final */
-    gap: 10px;
-}
-
-.chatbot-body p {
-    background-color: #444;
-    padding: 10px;
-    border-radius: 8px;
-    align-self: flex-start; /* Mensagens do bot */
-    max-width: 80%;
-}
-
-.chatbot-body input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #555;
-    border-radius: 5px;
-    background-color: #333;
-    color: white;
-    margin-top: auto; /* Empurra o input para baixo */
-}
-
-/* Responsividade Básica */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
     .header .container {
         flex-direction: column;
         text-align: center;
-        gap: 15px;
     }
+
     .nav-menu ul {
+        margin-top: 20px;
         flex-wrap: wrap;
         justify-content: center;
     }
+
     .nav-menu ul li {
-        margin: 0 10px 10px 10px;
+        margin: 0 10px 10px; /* Espaçamento e quebra de linha para menus */
     }
 
     .hero-content h2 {
         font-size: 2.5em;
     }
 
-    .about-us .container {
-        flex-direction: column;
-        text-align: center;
-    }
-    .about-slogan {
-        margin-top: 30px;
-    }
-
+    .about-us .container,
     .contact-content {
         flex-direction: column;
-        align-items: center;
-    }
-    .contact-form, .contact-info {
-        width: 100%;
-        max-width: 400px;
-    }
-    .social-links {
-        justify-content: center;
+        gap: 30px;
     }
 
-    .footer .container {
-        flex-direction: column;
+    .about-slogan h4 {
+        font-size: 1.4em;
+    }
+
+    .service-cards .card {
+        width: 100%; /* Cards de serviço ocupam toda a largura */
+    }
+
+    .contact-info {
         text-align: center;
     }
-    .footer-links {
-        margin-top: 15px;
+
+    .social-links {
+        margin-top: 20px;
     }
-    .footer-links a {
+
+    .social-links a {
         margin: 0 10px;
     }
 
-    .chatbot-window {
-        width: 90%;
-        left: 5%;
-        right: 5%;
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 24px;
     }
-
-/* --- Estilos para o Rodapé (ACATE) --- */
-.footer-association {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 15px 0; /* Espaçamento acima e abaixo */
 }
 
-.footer-association p {
-  margin-right: 10px; /* Espaço entre o texto e a logo */
-  font-size: 14px;
-  color: #ccc; /* Cor do texto, ajuste se necessário */
-}
-
-.acate{
-  font-size: 2.2em;
-  display: flex; 
-}
-
-/* --- Estilos para o Botão Flutuante do WhatsApp --- */
-.whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 40px;
-  right: 40px;
-  background-color: #25D366; /* Cor oficial do WhatsApp */
-  color: #FFF;
-  border-radius: 50px;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.whatsapp-float:hover {
-  background-color: #128C7E; /* Cor mais escura ao passar o mouse */
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 2em;
+    }
+    .hero-content h2 {
+        font-size: 2em;
+    }
+    .about-slogan h4 {
+        font-size: 1.2em;
+    }
+    .service-cards .card {
+        padding: 30px 20px;
+    }
+    .contact-form {
+        padding: 20px;
+    }
+    .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .footer-links a {
+        margin: 0;
+    }
 }
