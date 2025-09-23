@@ -522,7 +522,7 @@ ul {
 
 #acate{
   font-size: 2.2em;
-  display: inline-block; /* Para alinhar com a tag P */
+  display: flex; 
 }
 
 /* --- Estilos para o Botão Flutuante do WhatsApp --- */
