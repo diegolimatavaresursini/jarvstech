@@ -1,14 +1,13 @@
-* Reset Básico e Cores Base */
 :root {
-    --primary-color: #007bff; /* Azul vibrante, pode ajustar */
-    --secondary-color: #00bcd4; /* Azul mais claro para destaques */
-    --dark-bg: #1a1a2e; /* Fundo escuro principal */
-    --light-text: #e0e0e0; /* Texto claro */
-    --gray-text: #b0b0b0; /* Texto cinza */
-    --accent-color: #00ffc8; /* Cor de destaque para IA */
-    --whatsapp-color: #25d366; /* Cor do WhatsApp */
+    --bg-dark: #222222;
+    --text-light: #f4f4f4;
+    --jarvs-blue: #007bff; /* Azul da logo */
+    --jarvs-orange: #ff8c00; /* Laranja da logo */
+    --card-bg: #333333;
+    --border-color: #444444;
 }
 
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -16,295 +15,250 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: var(--light-text);
-    background-color: var(--dark-bg);
-    overflow-x: hidden; /* Evita scroll horizontal indesejado */
-}
-
-a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-a:hover {
-    color: var(--accent-color);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Header */
+a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Botão padrão */
+.btn {
+    display: inline-block;
+    background: linear-gradient(to right, var(--jarvs-blue), var(--jarvs-orange));
+    color: var(--text-light);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    border: none; /* Remover borda padrão do botão */
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* Cabeçalho */
 .header {
-    background-color: #0d0d1a; /* Um pouco mais escuro que o fundo */
-    padding: 20px 0;
-    position: sticky; /* Fixa o cabeçalho no topo ao rolar */
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    background-color: var(--bg-dark);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 60px; /* Garante altura mínima */
 }
 
-.logo h1 {
-    font-size: 2.5em;
-    color: var(--light-text);
-    margin: 0;
+.header .logo h1 {
+    font-size: 2.2em;
+    color: var(--jarvs-blue);
+    display: inline-block; /* Para alinhar com a tag P */
 }
 
-.logo .ia-highlight {
-    color: var(--accent-color);
+.header .logo h1 .ia-highlight {
+    color: var(--jarvs-orange);
 }
 
-.logo p {
+.header .logo p {
     font-size: 0.8em;
-    letter-spacing: 2px;
-    color: var(--gray-text);
-    margin-top: -5px;
+    color: #b0b0b0;
+    letter-spacing: 1px;
+    margin-top: -5px; /* Ajusta o espaçamento com o H1 */
 }
+
 
 .nav-menu ul {
-    list-style: none;
     display: flex;
 }
 
 .nav-menu ul li {
-    margin-left: 30px;
+    margin-left: 25px;
 }
 
 .nav-menu ul li a {
-    color: var(--light-text);
     font-weight: bold;
-    font-size: 1.1em;
-    padding: 5px 0;
-    position: relative;
+    color: #ccc;
+    transition: color 0.3s ease;
 }
 
-.nav-menu ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    left: 0;
-    bottom: 0;
-    transition: width 0.3s ease;
+.nav-menu ul li a:hover {
+    color: var(--jarvs-orange);
 }
 
-.nav-menu ul li a:hover::after {
-    width: 100%;
-}
-
-/* Hero Section */
+/* Seção Hero */
 .hero {
-    background: url('https://source.unsplash.com/1600x900/?futuristic-city,ai-technology') no-repeat center center/cover; /* Imagem de fundo, você pode substituir por uma sua */
-    height: 80vh; /* 80% da altura da viewport */
+    background-image: url(fundoback.jpeg); /* Substitua pela sua imagem de fundo */
+    height: 60vh; /* Altura menor para a hero */
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     text-align: center;
     position: relative;
-    color: var(--light-text);
-    padding: 0 20px;
-}
-
-/* Overlay para a imagem do hero, para melhor contraste do texto */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Escurece a imagem de fundo */
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
+    /* Adiciona um overlay escuro para melhorar a leitura do texto */
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
 }
 
 .hero-content h2 {
     font-size: 3.5em;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     line-height: 1.2;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-.btn {
-    display: inline-block;
-    background-color: var(--accent-color);
-    color: var(--dark-bg);
-    padding: 15px 30px;
-    border-radius: 5px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn:hover {
-    background-color: var(--secondary-color);
-    color: var(--light-text);
-    transform: translateY(-3px);
-}
-
-/* About Us Section */
+/* Seção Sobre Nós */
 .about-us {
     padding: 80px 0;
-    background-color: #1a1a2e; /* Mantém o fundo principal */
-    text-align: center;
+    background-color: var(--bg-dark);
 }
 
 .about-us .container {
     display: flex;
-    flex-direction: column;
-    gap: 40px;
+    justify-content: space-between;
     align-items: center;
+    gap: 40px;
 }
 
 .about-text {
-    max-width: 800px;
+    flex: 1;
 }
 
 .about-text h3 {
-    font-size: 2.2em;
-    color: var(--accent-color);
+    font-size: 2em;
     margin-bottom: 20px;
-    text-transform: uppercase;
+    color: var(--jarvs-blue);
 }
 
 .about-text p {
     font-size: 1.1em;
     line-height: 1.8;
-    color: var(--gray-text);
+    color: #d0d0d0;
 }
 
 .about-slogan {
-    background-color: #2c2c47; /* Fundo para o slogan */
+    flex: 1;
+    background-color: var(--card-bg);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    max-width: 900px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Garante que o slogan ocupe a altura disponível */
 }
 
 .about-slogan h4 {
-    font-size: 1.8em;
-    color: var(--light-text);
-    line-height: 1.5;
+    font-size: 1.5em;
+    color: var(--jarvs-orange);
+    line-height: 1.4;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 
-/* Services Section */
+
+/* Seção Nossos Serviços */
 .services {
     padding: 80px 0;
-    background-color: #0d0d1a; /* Fundo mais escuro para os serviços */
-    text-align: center;
+    background-color: #2a2a2a;
 }
 
 .services h3 {
-    font-size: 2.2em;
-    color: var(--accent-color);
-    margin-bottom: 40px;
-    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: var(--jarvs-blue);
 }
 
 .service-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Permite que os cards quebrem a linha em telas menores */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
 }
 
-.card {
-    background-color: #2c2c47;
-    padding: 40px 30px;
+.service-cards .card {
+    background-color: var(--card-bg);
+    padding: 30px;
     border-radius: 10px;
     text-align: center;
-    width: 300px; /* Largura fixa para os cards */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
-.card:hover {
+.service-cards .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
 }
 
-.card i {
-    font-size: 3.5em;
-    color: var(--secondary-color);
+.service-cards .card i {
+    font-size: 3em;
+    color: var(--jarvs-orange);
     margin-bottom: 20px;
 }
 
-.card h4 {
+.service-cards .card h4 {
     font-size: 1.5em;
-    color: var(--light-text);
     margin-bottom: 15px;
+    color: var(--jarvs-blue);
 }
 
-.card p {
+.service-cards .card p {
     font-size: 1em;
-    color: var(--gray-text);
+    color: #c0c0c0;
 }
 
-/* Contact Section */
+/* Seção Contato */
 .contact {
     padding: 80px 0;
-    background-color: #1a1a2e;
-    text-align: center;
+    background-color: var(--bg-dark);
 }
 
 .contact h3 {
-    font-size: 2.2em;
-    color: var(--accent-color);
-    margin-bottom: 40px;
-    text-transform: uppercase;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: var(--jarvs-blue);
 }
 
 .contact-content {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Permite quebrar em telas menores */
     gap: 50px;
+    flex-wrap: wrap; /* Para responsividade */
 }
 
 .contact-form {
+    flex: 1;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-width: 500px;
-    background-color: #2c2c47;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    gap: 15px;
 }
 
 .contact-form input,
 .contact-form textarea {
-    background-color: #1a1a2e;
-    border: 1px solid #444;
-    padding: 15px;
-    margin-bottom: 15px;
+    background-color: #3a3a3a;
+    border: 1px solid var(--border-color);
+    padding: 12px 15px;
     border-radius: 5px;
-    color: var(--light-text);
+    color: var(--text-light);
     font-size: 1em;
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: var(--gray-text);
+    color: #a0a0a0;
 }
 
 .contact-form textarea {
@@ -312,219 +266,286 @@ a:hover {
     resize: vertical;
 }
 
-.contact-form button {
-    background-color: var(--accent-color);
-    color: var(--dark-bg);
-    border: none;
-    padding: 15px 25px;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-size: 1.1em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.contact-form button:hover {
-    background-color: var(--secondary-color);
-    color: var(--light-text);
-    transform: translateY(-3px);
-}
-
 .contact-info {
-    text-align: left;
-    max-width: 350px;
+    flex: 1;
+    min-width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 20px;
+    font-size: 1.1em;
+    color: #c0c0c0;
 }
 
 .contact-info p {
-    font-size: 1.1em;
-    color: var(--light-text);
-    margin-bottom: 20px;
+    margin: 0;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
 }
 
 .social-links a {
-    font-size: 2em;
-    margin-right: 20px;
-    color: var(--secondary-color);
+    color: var(--jarvs-orange);
+    font-size: 1.8em;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: var(--accent-color);
+    color: var(--jarvs-blue);
 }
 
-/* Footer */
+/* Rodapé */
 .footer {
-    background-color: #0d0d1a;
+    background-color: #1a1a1a;
+    color: #ccc;
     padding: 40px 0;
-    text-align: center;
-    border-top: 1px solid #2c2c47;
+    font-size: 0.9em;
 }
 
 .footer .container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
 .footer-logo h1 {
     font-size: 2em;
-    color: var(--light-text);
-    margin: 0;
+    color: var(--jarvs-blue);
+    display: inline-block;
 }
 
-.footer-logo .ia-highlight {
-    color: var(--accent-color);
+.footer-logo h1 .ia-highlight {
+    color: var(--jarvs-orange);
 }
 
 .footer-logo p {
     font-size: 0.7em;
-    letter-spacing: 2px;
-    color: var(--gray-text);
+    color: #b0b0b0;
+    letter-spacing: 1px;
     margin-top: -5px;
 }
 
-.footer-association p {
-    font-size: 0.9em;
-    color: var(--gray-text);
-    margin-bottom: 10px;
-}
-
-.footer-association .acate img {
-    max-width: 120px; /* Ajusta o tamanho máximo da logo da ACATE */
-    height: auto;
-    display: block; /* Remove espaço extra abaixo da imagem */
-    margin: 0 auto; /* Centraliza a imagem */
-}
-
-.copyright {
-    font-size: 0.9em;
-    color: var(--gray-text);
-    margin-top: 20px;
+.footer .copyright {
+    margin: 0;
 }
 
 .footer-links a {
-    color: var(--gray-text);
-    font-size: 0.9em;
-    margin: 0 15px;
+    color: #ccc;
+    margin-left: 20px;
+    transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
-    color: var(--accent-color);
+    color: var(--jarvs-orange);
 }
 
 
-/* WhatsApp Float Button */
-.whatsapp-float {
+/* Chatbot Icon */
+.chatbot-icon {
     position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(to right, #00aaff, #007bff); /* Gradiente azul para o ícone */
+    color: white;
     width: 60px;
     height: 60px;
-    bottom: 40px;
-    right: 40px;
-    background-color: var(--whatsapp-color);
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
-    z-index: 1000;
-    display: flex; /* Para centralizar o ícone */
-    align-items: center;
+    border-radius: 50%;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
     transition: transform 0.3s ease;
 }
 
-.whatsapp-float:hover {
-    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+.chatbot-icon:hover {
+    transform: scale(1.1);
 }
 
-.whatsapp-float i {
-    font-size: 1.5em; /* Ajusta o tamanho do ícone */
+.chatbot-message {
+    position: absolute;
+    right: 70px; /* Posição à esquerda do ícone */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    white-space: nowrap; /* Impede quebra de linha */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* Responsive Adjustments */
+.chatbot-icon:hover .chatbot-message {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Chatbot Window */
+.chatbot-window {
+    position: fixed;
+    bottom: 100px; /* Acima do ícone */
+    right: 30px;
+    width: 350px;
+    height: 450px;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    z-index: 1001;
+    display: none; /* Inicia oculto */
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chatbot-header {
+    background-color: var(--jarvs-blue);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.close-chatbot {
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+.chatbot-body {
+    flex-grow: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Mensagens no final */
+    gap: 10px;
+}
+
+.chatbot-body p {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 8px;
+    align-self: flex-start; /* Mensagens do bot */
+    max-width: 80%;
+}
+
+.chatbot-body input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    margin-top: auto; /* Empurra o input para baixo */
+}
+
+/* Responsividade Básica */
 @media (max-width: 768px) {
     .header .container {
         flex-direction: column;
         text-align: center;
+        gap: 15px;
     }
-
     .nav-menu ul {
-        margin-top: 20px;
         flex-wrap: wrap;
         justify-content: center;
     }
-
     .nav-menu ul li {
-        margin: 0 10px 10px; /* Espaçamento e quebra de linha para menus */
+        margin: 0 10px 10px 10px;
     }
 
     .hero-content h2 {
         font-size: 2.5em;
     }
 
-    .about-us .container,
-    .contact-content {
+    .about-us .container {
         flex-direction: column;
-        gap: 30px;
-    }
-
-    .about-slogan h4 {
-        font-size: 1.4em;
-    }
-
-    .service-cards .card {
-        width: 100%; /* Cards de serviço ocupam toda a largura */
-    }
-
-    .contact-info {
         text-align: center;
     }
-
-    .social-links {
-        margin-top: 20px;
+    .about-slogan {
+        margin-top: 30px;
     }
 
-    .social-links a {
+    .contact-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contact-form, .contact-info {
+        width: 100%;
+        max-width: 400px;
+    }
+    .social-links {
+        justify-content: center;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-links {
+        margin-top: 15px;
+    }
+    .footer-links a {
         margin: 0 10px;
     }
 
-    .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 24px;
+    .chatbot-window {
+        width: 90%;
+        left: 5%;
+        right: 5%;
     }
+
+/* --- Estilos para o Rodapé (ACATE) --- */
+.footer-association {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 15px 0; /* Espaçamento acima e abaixo */
 }
 
-@media (max-width: 480px) {
-    .logo h1 {
-        font-size: 2em;
-    }
-    .hero-content h2 {
-        font-size: 2em;
-    }
-    .about-slogan h4 {
-        font-size: 1.2em;
-    }
-    .service-cards .card {
-        padding: 30px 20px;
-    }
-    .contact-form {
-        padding: 20px;
-    }
-    .footer-links {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-    .footer-links a {
-        margin: 0;
-    }
+.footer-association p {
+  margin-right: 10px; /* Espaço entre o texto e a logo */
+  font-size: 14px;
+  color: #ccc; /* Cor do texto, ajuste se necessário */
+}
+
+.footer-association img {
+  height: 25px; /* Altura da logo da ACATE */
+  width: auto;
+}
+
+/* --- Estilos para o Botão Flutuante do WhatsApp --- */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #25D366; /* Cor oficial do WhatsApp */
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #128C7E; /* Cor mais escura ao passar o mouse */
 }
