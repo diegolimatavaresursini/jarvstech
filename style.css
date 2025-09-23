@@ -343,113 +343,6 @@ ul {
 .footer-links a:hover {
     color: var(--jarvs-orange);
 }
-
-
-/* Chatbot Icon */
-.chatbot-icon {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background: linear-gradient(to right, #00aaff, #007bff); /* Gradiente azul para o ícone */
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    transition: transform 0.3s ease;
-}
-
-.chatbot-icon:hover {
-    transform: scale(1.1);
-}
-
-.chatbot-message {
-    position: absolute;
-    right: 70px; /* Posição à esquerda do ícone */
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #333;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 8px;
-    font-size: 0.9em;
-    white-space: nowrap; /* Impede quebra de linha */
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.chatbot-icon:hover .chatbot-message {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* Chatbot Window */
-.chatbot-window {
-    position: fixed;
-    bottom: 100px; /* Acima do ícone */
-    right: 30px;
-    width: 350px;
-    height: 450px;
-    background-color: #2c2c2c;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
-    z-index: 1001;
-    display: none; /* Inicia oculto */
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.chatbot-header {
-    background-color: var(--jarvs-blue);
-    color: white;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.close-chatbot {
-    cursor: pointer;
-    font-size: 1.2em;
-}
-
-.chatbot-body {
-    flex-grow: 1;
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end; /* Mensagens no final */
-    gap: 10px;
-}
-
-.chatbot-body p {
-    background-color: #444;
-    padding: 10px;
-    border-radius: 8px;
-    align-self: flex-start; /* Mensagens do bot */
-    max-width: 80%;
-}
-
-.chatbot-body input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #555;
-    border-radius: 5px;
-    background-color: #333;
-    color: white;
-    margin-top: auto; /* Empurra o input para baixo */
-}
-
 /* Responsividade Básica */
 @media (max-width: 768px) {
     .header .container {
@@ -500,11 +393,6 @@ ul {
         margin: 0 10px;
     }
 
-    .chatbot-window {
-        width: 90%;
-        left: 5%;
-        right: 5%;
-    }
 
 /* --- Estilos para o Rodapé (ACATE) --- */
 .footer-association {
