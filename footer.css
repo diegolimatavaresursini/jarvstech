@@ -1,4 +1,4 @@
-/* Estilo geral das seções */
+/* 
 section {
   max-width: 900px;
   margin: 0 auto;
@@ -10,7 +10,7 @@ section {
   color: #010;
 }
 
-/* Títulos principais */
+ Títulos principais 
 section h2 {
   font-size: 2rem;
   color: #0a66c2;
@@ -20,21 +20,21 @@ section h2 {
   gap: 0.5rem;
 }
 
-/* Subtítulos */
+Subtítulos 
 section h3 {
   font-size: 1.3rem;
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
-  color: #1a1a1a;
+  color: #1a1a1a; Estilo geral das seções 
 }
 
-/* Parágrafos */
+Parágrafos 
 section p {
   line-height: 1.6;
   margin-bottom: 1rem;
 }
 
-/* Listas */
+/* Listas 
 section ul {
   padding-left: 1.5rem;
   margin-bottom: 1rem;
@@ -44,7 +44,7 @@ section ul li {
   margin-bottom: 0.5rem;
 }
 
-/* Links */
+/* Links 
 section a {
   color: #0a66c2;
   text-decoration: none;
@@ -54,7 +54,7 @@ section a:hover {
   text-decoration: underline;
 }
 
-/* Responsividade */
+ Responsividade 
 @media (max-width: 600px) {
   section {
     padding: 1rem;
@@ -62,7 +62,135 @@ section a:hover {
 
   section h2 {
     font-size: 1.5rem;
-  }
+  }    */
+
+:root {
+    --primary-color: #2e3192; /* Azul escuro principal */
+    --secondary-color: #00bcd4; /* Azul ciano de destaque */
+    --text-color: #333; /* Cor de texto padrão */
+    --bg-light: #f9f9f9; /* Fundo claro */
+    --bg-dark: #1a1a1a; /* Fundo escuro (se houver seções escuras) */
+    --white: #ffffff;
+    --gray-light: #cccccc;
+    --gray-dark: #666666;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white); /* Fundo branco ou quase branco */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container principal para centralizar o conteúdo */
+.container {
+    max-width: 960px; /* Largura máxima similar ao conteúdo do site da Jarvs */
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color); /* Títulos em azul escuro */
+    font-weight: 600; /* Semibold */
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+h1 {
+    font-size: 2.5em; /* Tamanho maior para o título principal */
+    text-align: center;
+    margin-bottom: 1em;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 15px;
+}
+
+h2 {
+    font-size: 1.8em;
+}
+
+h3 {
+    font-size: 1.4em;
+    color: var(--secondary-color); /* Subtítulos em ciano */
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+a {
+    color: var(--secondary-color); /* Links em ciano */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--primary-color); /* Mudar para azul escuro ao passar o mouse */
+    text-decoration: underline;
+}
+
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 1em;
+}
+
+ul li, ol li {
+    margin-bottom: 0.5em;
+}
+
+/* Estilo para um botão ou link de CTA (Call to Action) se houver */
+.btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: var(--secondary-color);
+    color: var(--white); /* Garante que o texto fique branco */
+    text-decoration: none;
+}
+
+/* Estilo para o footer (exemplo) */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 50px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--secondary-color);
+}
+
+footer a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
 
   section h3 {
     font-size: 1.1rem;
