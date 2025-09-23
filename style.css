@@ -521,8 +521,8 @@ ul {
 }
 
 .footer-association img {
-  height: 25px; /* Altura da logo da ACATE */
-  width: auto;
+  font-size: 2.2em;
+  display: inline-block; /* Para alinhar com a tag P */
 }
 
 /* --- Estilos para o Botão Flutuante do WhatsApp --- */
