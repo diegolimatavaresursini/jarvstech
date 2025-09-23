@@ -1,0 +1,70 @@
+/* Estilo geral das seções */
+section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Títulos principais */
+section h2 {
+  font-size: 2rem;
+  color: #0a66c2;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Subtítulos */
+section h3 {
+  font-size: 1.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a1a;
+}
+
+/* Parágrafos */
+section p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Listas */
+section ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+section ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Links */
+section a {
+  color: #0a66c2;
+  text-decoration: none;
+}
+
+section a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  section {
+    padding: 1rem;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  section h3 {
+    font-size: 1.1rem;
+  }
+}
