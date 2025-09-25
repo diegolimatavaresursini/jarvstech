@@ -1,72 +1,375 @@
-[9:02 PM, 9/23/2025] Vitor Santos Cpdi: /* Configurações Globais e Variáveis de Cor */
+/* Variáveis de Cores */
 :root {
-    --cor-fundo: #121212;
-    --cor-fundo-card: #1e1e1e;
-    --cor-azul-logo: #00aaff;
-    --cor-laranja-cta: #ff8c00;
-    --cor-texto-principal: #f0f0f0;
-    --cor-texto-secundario: #a0a0a0;
-    --cor-borda: #333;
+    --bg-dark: #222222;
+    --text-light: #f4f4f4;
+    --jarvs-blue: #007bff; /* Azul da logo */
+    --jarvs-orange: #ff8c00; /* Laranja da logo */
+    --card-bg: #333333;
+    --border-color: #444444;
 }
 
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto-principal);
+    font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
 }
 
-/* Cabeçalho e Navegação */
-header {
-    background-color: rgba(18, 18, 18, 0.8);
-    backdrop-filter: blur(10px);
-    width: 100%;
-    padding: 15px 5%;
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Botão padrão */
+.btn {
+    display: inline-block;
+    background: linear-gradient(to right, var(--jarvs-blue), var(--jarvs-orange));
+    color: var(--text-light);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+    border: none; /* Remover borda padrão do botão */
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+/* Cabeçalho */
+.header {
+    background-color: var(--bg-dark);
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px; /* Garante altura mínima */
+}
+
+.header .logo h1 {
+    font-size: 2.2em;
+    color: var(--jarvs-blue);
+    display: inline-block; /* Para alinhar com a tag P */
+}
+
+.header .logo h1 .ia-highlight {
+    color: var(--jarvs-orange);
+}
+
+.header .logo p {
+    font-size: 0.8em;
+    color: #b0b0b0;
+    letter-spacing: 1px;
+    margin-top: -5px; /* Ajusta o espaçamento com o H1 */
+}
+
+
+.nav-menu ul {
+    display: flex;
+}
+
+.nav-menu ul li {
+    margin-left: 25px;
+}
+
+.nav-menu ul li a {
+    font-weight: bold;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--jarvs-orange);
+}
+
+/* Seção Hero */
+.hero {
+    background: url('https://via.placeholder.com/1500x700/1a1a1a/cccccc?text=Fundo+Tecnologico') no-repeat center center/cover; /* Substitua pela sua imagem de fundo */
+    height: 60vh; /* Altura menor para a hero */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    /* Adiciona um overlay escuro para melhorar a leitura do texto */
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.5);
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+/* Seção Sobre Nós */
+.about-us {
+    padding: 80px 0;
+    background-color: var(--bg-dark);
+}
+
+.about-us .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: var(--jarvs-blue);
+}
+
+.about-text p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #d0d0d0;
+}
+
+.about-slogan {
+    flex: 1;
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Garante que o slogan ocupe a altura disponível */
+}
+
+.about-slogan h4 {
+    font-size: 1.5em;
+    color: var(--jarvs-orange);
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+
+/* Seção Nossos Serviços */
+.services {
+    padding: 80px 0;
+    background-color: #2a2a2a;
+}
+
+.services h3 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: var(--jarvs-blue);
+}
+
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-cards .card {
+    background-color: var(--card-bg);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.service-cards .card:hover {
+    transform: translateY(-10px);
+}
+
+.service-cards .card i {
+    font-size: 3em;
+    color: var(--jarvs-orange);
+    margin-bottom: 20px;
+}
+
+.service-cards .card h4 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--jarvs-blue);
+}
+
+.service-cards .card p {
+    font-size: 1em;
+    color: #c0c0c0;
+}
+
+/* Seção Contato */
+.contact {
+    padding: 80px 0;
+    background-color: var(--bg-dark);
+}
+
+.contact h3 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: var(--jarvs-blue);
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Para responsividade */
+}
+
+.contact-form {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: #3a3a3a;
+    border: 1px solid var(--border-color);
+    padding: 12px 15px;
+    border-radius: 5px;
+    color: var(--text-light);
+    font-size: 1em;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #a0a0a0;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-info {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    font-size: 1.1em;
+    color: #c0c0c0;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.social-links a {
+    color: var(--jarvs-orange);
+    font-size: 1.8em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--jarvs-blue);
+}
+
+/* Rodapé */
+.footer {
+    background-color: #1a1a1a;
+    color: #ccc;
+    padding: 40px 0;
+    font-size: 0.9em;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo h1 {
+    font-size: 2em;
+    color: var(--jarvs-blue);
+    display: inline-block;
+}
+
+.footer-logo h1 .ia-highlight {
+    color: var(--jarvs-orange);
+}
+
+.footer-logo p {
+    font-size: 0.7em;
+    color: #b0b0b0;
+    letter-spacing: 1px;
+    margin-top: -5px;
+}
+
+.footer .copyright {
+    margin: 0;
+}
+
+.footer-links a {
+    color: #ccc;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--jarvs-orange);
+}
+
+.fixed-bottom-bar {
     position: fixed;
-    top: 0;
+    bottom: 0;
     left: 0;
+    width: 100%;
+    
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1000;
-    border-bottom: 1p…
-[9:03 PM, 9/23/2025] Vitor Santos Cpdi: Arquivo 3: politica-privacidade.html
-Este é um modelo básico. Recomendo fortemente que você consulte um profissional para criar uma política de privacidade adequada ao seu negócio. Copie e cole este código em um arquivo chamado politica-privacidade.html.
-[9:03 PM, 9/23/2025] Vitor Santos Cpdi: <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade - Jarvs [IA] Tecnologia</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        .privacy-content {
-            padding: 120px 5% 80px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .privacy-content h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--cor-azul-logo);
-        }
-        .privacy-content h2 {
-            font-size: 1.8rem;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        .privacy-content p {
-            margin-bottom: 15px;
-            color: var(--cor-texto-secundario);
-        }
-        .privacy-content a {
-            color: var(--cor-azul-logo);
-        }
+    display: flex; /* Para alinhar os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens na barra */
+    padding: 10px 0;
+}
+
+.whatsapp-icon {
+    display: flex;
+    align-items: right; /*mexi aqui*/
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: #25d366; /* Fundo do botão dentro da barra */
+    border-radius: 5px;
+}
+
+.whatsapp-icon i {
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    font-size: 20px;
+}
