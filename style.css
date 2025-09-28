@@ -347,15 +347,18 @@ ul {
 
 .fixed-bottom-bar {
     position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    bottom: 20px;
+    right: 20px;
     z-index: 1000;
-    display: flex; /* Para alinhar os itens horizontalmente */
-    justify-content: center; /* Centraliza os itens na barra */
-    padding: 10px 0;
+    
+   .fixed-bottom-bar img {
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease;
+}
+
+.fixed-bottom-bar img:hover {
+  transform: scale(1.1);
 }
 
 /* .whatsapp-icon {
