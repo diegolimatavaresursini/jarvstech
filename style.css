@@ -358,18 +358,19 @@ ul {
     padding: 10px 0;
 }
 
-.whatsapp-icon {
+/* .whatsapp-icon {
     display: flex;
-    align-items: right; /*mexi aqui*/
+    align-items: right; /*mexi aqu
     padding: 8px 15px;
     color: white;
     text-decoration: none;
     font-size: 16px;
-    background-color: #25d366; /* Fundo do botão dentro da barra */
+    background-color: #25d366; /* Fundo do botão dentro da barra
     border-radius: 5px;
 }
 
 .whatsapp-icon i {
-    margin-right: 8px; /* Espaço entre o ícone e o texto */
+    margin-right: 8px; /* Espaço entre o ícone e o texto 
     font-size: 20px;
 }
+Reset básico */
