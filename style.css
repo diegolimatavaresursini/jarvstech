@@ -388,16 +388,11 @@ ul {
     padding: 20px;
   }
 
-  #home img {
-    max-width: 100%;
-    height: auto;
-  }
-
   #home .text-content {
     font-size: 1rem;
   }
 }
-#home .img {
+#home .fundoback {
   max-width: 100%;
   height: auto;
   display: block;
