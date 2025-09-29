@@ -336,7 +336,7 @@ ul {
 }
 
 .footer-links a {
-    color: #ccc;
+    color: black;
     margin-left: 20px;
     transition: color 0.3s ease;
 }
