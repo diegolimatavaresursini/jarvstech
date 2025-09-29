@@ -350,7 +350,7 @@ ul {
     bottom: 20px;
     right: 20px;
     z-index: 1000;
-    
+}
    .fixed-bottom-bar img {
   width: 50px; 
   height: 50px;
@@ -396,4 +396,95 @@ ul {
   max-width: 90%;
   height: auto;
   display: block;
+}
+
+
+@media (max-width: 768px) {
+  .about-us .container,
+  .contact-content,
+  .footer .container {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 30px;
+  }
+
+  .about-text h3,
+  .services h3,
+  .contact h3 {
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  .about-text p,
+  .contact-info {
+    font-size: 1em;
+    text-align: center;
+  }
+
+  .about-slogan {
+    padding: 20px;
+    height: auto;
+  }
+
+  .about-slogan h4 {
+    font-size: 1.2em;
+  }
+
+  .service-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .service-cards .card {
+    padding: 20px;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 100%;
+  }
+
+  .footer-logo h1 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .footer-links {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .footer-links a {
+    margin: 0 10px;
+  }
+}
+@media (max-width: 768px) {
+  .header .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .nav-menu ul li {
+    margin-left: 0;
+  }
+
+  .header .logo h1 {
+    font-size: 1.8em;
+  }
+
+  .header .logo p {
+    font-size: 0.7em;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
 }
