@@ -1,15 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jarvs [IA] Tecnologia</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  </head>
-<p>Transformamos ideias em soluções digitais inteligentes.
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jarvs [IA] - Soluções Digitais</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+    }
 
-Na Jarvs [IA], não vendemos apenas tecnologia — entregamos inovação acessível, funcional e escalável. Nosso portfólio reúne projetos que unem design moderno, automação inteligente e integração com ferramentas que realmente fazem a diferença no dia a dia das empresas.
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 300px;
+      margin-top: 40px;
+      border-radius: 12px;
+    }
+
+    .carousel-images {
+      display: flex;
+      width: 300%;
+      animation: slide 12s infinite;
+    }
+
+    .carousel-images img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      33% { transform: translateX(-100%); }
+      66% { transform: translateX(-200%); }
+      100% { transform: translateX(0%); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <p>
+Transformamos ideias em soluções digitais inteligentes. Na Jarvs [IA], não vendemos apenas tecnologia — entregamos inovação acessível, funcional e escalável. Nosso portfólio reúne projetos que unem design moderno, automação inteligente e integração com ferramentas que realmente fazem a diferença no dia a dia das empresas.
 
 🌐 Criação de Sites
 Desenvolvemos plataformas web modernas, responsivas e otimizadas para performance. Cada site é pensado para comunicar com clareza, converter com eficiência e fortalecer a presença digital da marca.
@@ -18,15 +67,20 @@ Desenvolvemos plataformas web modernas, responsivas e otimizadas para performanc
 Aplicativos personalizados para Android e iOS, com foco em usabilidade, velocidade e integração com sistemas internos. Do protótipo à publicação, entregamos soluções completas e prontas para escalar.
 
 🤖 Automação com n8n + WhatsApp
-Implementamos automações inteligentes usando n8n, conectando sistemas e criando fluxos que funcionam 24/7. Entre os destaques:
-
-Atendimento automatizado via WhatsApp com respostas personalizadas.
-
-Geração de leads e notificações em tempo real.
-
-Integração com CRMs, planilhas e APIs externas.
+Implementamos automações inteligentes usando n8n, conectando sistemas e criando fluxos que funcionam 24/7. Entre os destaques: Atendimento automatizado via WhatsApp com respostas personalizadas. Geração de leads e notificações em tempo real. Integração com CRMs, planilhas e APIs externas.
 
 Essas soluções já estão em operação em empresas que buscavam agilidade, redução de custos e uma comunicação mais eficiente com seus clientes.
 
 Jarvs [IA] é para quem quer sair do óbvio e entrar no futuro. Se você busca tecnologia que realmente entrega resultado, fale com a gente.
-</p>
+    </p>
+
+    <section class="carousel">
+      <div class="carousel-images">
+        <img src="https://via.placeholder.com/1000x300?text=Projeto+1" alt="Projeto 1">
+        <img src="https://via.placeholder.com/1000x300?text=Projeto+2" alt="Projeto 2">
+        <img src="https://via.placeholder.com/1000x300?text=Projeto+3" alt="Projeto 3">
+      </div>
+    </section>
+  </div>
+</body>
+</html>
